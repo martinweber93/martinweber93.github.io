@@ -12,7 +12,7 @@ body {
     font-weight: 300;
     font-size: 1.8em;
     color: #555;
-    padding-top: 150px;
+    padding-top: 50px;
     
 	background-image: url(../img/header-bg.jpg);
 	background-repeat: no-repeat;
@@ -81,10 +81,10 @@ a:after {
 
 .w {
 	background-color: #ffffff;
-	border: 1px solid #dddddd;
-	-moz-box-shadow: 5px 5px rgba(0,0,0,0.2);
-	-webkit-box-shadow: 5px 5px rgba(0,0,0,0.2);
-	box-shadow: 5px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.16), 0 6px 12px rgba(0,0,0,0.23);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 1px;
 }
 
 
@@ -314,4 +314,27 @@ form .row:first-child .floating-label-form-group {
     .border-top-form{
         border-top: 1px solid #cccccc !important;
     }
+}
+@media (min-width: 768px){
+    body{
+        padding-top: 100px;
+    }
+}
+@media (min-width: 992px){
+    body{
+        padding-top: 150px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #b6daf2;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
 }

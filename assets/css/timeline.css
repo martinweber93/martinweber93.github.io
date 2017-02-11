@@ -1,33 +1,35 @@
 .timeline {
-    margin: 0 0 30px 0;
+    margin: 0 0 10px 0;
     padding: 0;
     list-style: none;
 }
 .timeline:before {
     content: '';
     position: absolute;
-    top: 0px;
+    top: 0;
     bottom: 0;
     width: 5px;
     background: #f2f2f2;
-    left: 45px;
+    left: 38px;
     border: 1px solid #dddddd;
     margin: 0;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
-.timeline > li {
+.timeline li {
     position: relative;
     margin-right: 10px;
     margin-bottom: 15px;
 }
 
-.timeline > li:before, .timeline > li:after {
+.timeline li:before,
+.timeline li:after {
     display: table;
     content: " ";
 }
-.timeline > li.time-label > span {
+.timeline li.time-label,
+.timeline li.time-label-end{
     font-weight: 600;
     padding: 5px;
     display: inline-block;
@@ -36,12 +38,20 @@
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    color: #FFF
+    color: #FFF;
+    text-align: center;
+}
+.timeline li.time-label-end{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding-top: 8px;
+    left: 5px;
 }
 
-.timeline > li > .fa,
-.timeline > li > .glyphicon,
-.timeline > li > .icon {
+.timeline li.timeline-item .fa,
+.timeline li.timeline-item .glyphicon,
+.timeline li.timeline-item .icon {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     width: 30px;
     height: 30px;
@@ -52,15 +62,15 @@
     background: #eee;
     border-radius: 50%;
     text-align: center;
-    left: 18px;
+    left: 10px;
     top: 0;
     padding-top: 2px;
 }
-.timeline > li > .timeline-item {
+.timeline li.timeline-item .timeline-content {
     margin-top: 10px;
     background: #f2f2f2;
     color: #555;
-    margin-left: 60px;
+    margin-left: 55px;
     margin-right: 15px;
     padding: 5px;
     position: relative;
@@ -68,10 +78,10 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-.timeline > li > .timeline-item:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.timeline li.timeline-item .timeline-content:hover{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.timeline > li > .timeline-item > .timeline-header {
+.timeline li.timeline-item .timeline-content .timeline-header {
     margin: 0;
     color: #555;
     border-bottom: 1px solid #dddddd;;
@@ -79,6 +89,41 @@
     font-size: 16px;
     line-height: 1.1;
 }
-.timeline > li > .timeline-item > .timeline-body, .timeline > li > .timeline-item > .timeline-footer {
+.timeline li.timeline-item .timeline-content .timeline-body,
+.timeline li.timeline-item .timeline-content .timeline-footer {
     padding: 10px;
+    font-size: 14px;
+    line-height: 1.0;
 }
+@media (min-width: 992px){
+    .timeline-container{
+        height: 520px;
+        overflow-y: auto;
+
+    }
+    .timeline:before {
+        bottom: -15px;
+    }
+}
+@media (min-width: 1200px){
+    .timeline:before {
+        bottom: -20px;
+    }
+}
+.timeline-above,
+.timeline-under{
+    position: absolute;
+    left: 50%;
+    font-size: 40px;
+    z-index: 999;
+    font-weight: 900;
+    color: #3498db;
+    opacity: 0.8;
+}
+.timeline-above{
+    top: -25px;
+}
+.timeline-under{
+    bottom: -25px;
+}
+
