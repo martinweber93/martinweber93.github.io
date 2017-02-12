@@ -118,10 +118,15 @@
     z-index: 999;
     font-weight: 900;
     color: #3498db;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+.timeline-above.active,
+.timeline-under.active{
     opacity: 0.8;
 }
 .timeline-above{
-    top: -25px;
+    top: -10px;
 }
 .timeline-under{
     bottom: -25px;
